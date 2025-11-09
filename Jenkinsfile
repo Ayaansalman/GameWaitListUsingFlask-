@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 echo 'Fetching code from GitHub...'
-                git branch: 'main', url: 'https://github.com/Ayaansalman/GameWaitListUsingFlask-.git'
+                git branch: 'master', url: 'https://github.com/Ayaansalman/GameWaitListUsingFlask-.git'
             }
         }
         
