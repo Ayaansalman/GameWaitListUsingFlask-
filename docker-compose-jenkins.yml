@@ -20,7 +20,7 @@ services:
     ports:
       - "5001:5000"
     volumes:
-      - ./:/app
+      - /var/lib/jenkins/workspace/catalysm-waitlist-build:/app
     depends_on:
       - db
     networks:
