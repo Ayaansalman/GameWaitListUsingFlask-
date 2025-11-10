@@ -14,7 +14,6 @@ pipeline {
                 echo 'Building containerized application...'
                 sh 'docker-compose -f docker-compose-jenkins.yml down || true'
                 sh 'docker-compose -f docker-compose-jenkins.yml up -d --build'
-                sh 'nohup bash -c "sleep 200 && docker-compose -f docker-compose-jenkins.yml down" >/dev/null 2>&1 &'
             }
         }
         
