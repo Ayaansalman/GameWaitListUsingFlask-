@@ -23,6 +23,7 @@ pipeline {
                 sh 'sleep 20'
                 echo 'Verifying deployment by checking container status...'
                 sh 'docker ps | grep jenkins_waitlist_web'
+            }
         }
     }
     
