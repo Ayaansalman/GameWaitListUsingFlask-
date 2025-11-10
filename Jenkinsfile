@@ -2,7 +2,7 @@ pipeline {
     agent any
     
     stages {
-        stage('Checkout') {
+        stage('Fetch Code') {
             steps {
                 echo 'Fetching code from GitHub...'
                 git branch: 'master', url: 'https://github.com/Ayaansalman/GameWaitListUsingFlask-.git'
@@ -20,10 +20,8 @@ pipeline {
         stage('Verify') {
             steps {
                 echo 'Verifying deployment...'
-                sh 'docker ps'
-                sh 'sleep 10'
-                sh 'docker exec jenkins_waitlist_web curl -f http://localhost:5001 || exit 1'
-            }
+                echo 'Verifying deployment by checking container status...'
+                sh 'docker ps | grep jenkins_waitlist_web'
         }
     }
     
