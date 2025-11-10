@@ -22,7 +22,7 @@ pipeline {
                 echo 'Verifying deployment...'
                 sh 'docker ps'
                 sh 'sleep 10'
-                sh 'curl -f http://localhost:5001 || exit 1'
+                sh 'docker exec jenkins_waitlist_web curl -f http://localhost:5000 || exit 1'
             }
         }
     }
